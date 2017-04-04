@@ -2,8 +2,6 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 import numpy as np
 import functools
-import textwrap
-import invisible_cities.core.fit_functions as fitf
 
 def labels(xlabel, ylabel):
     """
@@ -30,7 +28,7 @@ def doublehist(data1, data2, lbls, *args, **kwargs):
     h2 = plt.hist(data2, *args, label=lbls[1], alpha=0.5, normed=True, **kwargs)
     return h1, h2, plt.legend()
 
-
+#
 def hist2d(*args, **kwargs):
     """
     Create a figure and then the histogram
@@ -102,7 +100,7 @@ def gausstext(values):
         $\mu$ = {:.1f}
         $\sigma$ = {:.2f}
         R = {:.3}%
-            Rbb = {:.3}%""".format(*values[1:], *reso(values)))
+        Rbb = {:.3}%""".format(*f.values[1:], *reso(f.values)))
 
 def save_to_folder(outputfolder, name):
     """

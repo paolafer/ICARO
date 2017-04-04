@@ -4,13 +4,13 @@ Compute PMAPS and PMAP features
 import sys
 import numpy as np
 
-from invisible_cities.database import load_db
+from   invisible_cities.database import load_db
 import invisible_cities.sierpe.blr as blr
 import invisible_cities.reco.peak_functions_c as cpf
 import invisible_cities.reco.peak_functions as pf
 from   invisible_cities.core.system_of_units_c import units
-from invisible_cities.core.core_functions import loc_elem_1d
-from invisible_cities.reco.params import S12Params, ThresholdParams,\
+from   invisible_cities.core.core_functions import loc_elem_1d
+from   invisible_cities.reco.params import S12Params, ThresholdParams,\
                 CalibratedSum, PMaps, CalibVectors, DeconvParams
 
 from pmp_functions import s12_features, print_s12, print_s2si, compare_S1
@@ -52,7 +52,6 @@ class EventPmaps:
         self.ys = DataSiPM.Y.values
         pmt_active = np.nonzero(DataPMT.Active.values)[0].tolist()
 
-
         self.P = CalibVectors(channel_id = DataPMT.ChannelID.values,
                               coeff_blr = abs(DataPMT.coeff_blr   .values),
                               coeff_c = abs(DataPMT.coeff_c   .values),
@@ -65,9 +64,7 @@ class EventPmaps:
         self.s1par         = s1par
         self.s2par         = s2par
         self.thr           = thr
-
-        # instances of s12fF
-
+        
         self.verbose = verbose
 
     def calibrated_pmt_and_csum(self, event, pmtrwf):
