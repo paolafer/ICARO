@@ -13,7 +13,7 @@ from   invisible_cities.core.core_functions import loc_elem_1d
 from   invisible_cities.reco.params import S12Params, ThresholdParams,\
                 CalibratedSum, PMaps, CalibVectors, DeconvParams
 
-from pmp_functions import s12_features, print_s12, print_s2si, compare_S1
+from icaro.core.pmp_functions import s12_features, print_s12, print_s2si, compare_S1
 
 
 class EventPmaps:
@@ -64,7 +64,7 @@ class EventPmaps:
         self.s1par         = s1par
         self.s2par         = s2par
         self.thr           = thr
-        
+
         self.verbose = verbose
 
     def calibrated_pmt_and_csum(self, event, pmtrwf):

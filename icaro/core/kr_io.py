@@ -4,8 +4,8 @@ import invisible_cities.reco.nh5 as table_formats
 from invisible_cities.reco.pmap_io import event_writer, run_writer,\
      _make_run_event_tables
 
-from   invisible_cities.core.system_of_units_c import units
-from pmp_functions import s12_features
+from invisible_cities.core.system_of_units_c import units
+from icaro.core.pmp_functions import s12_features
 
 class KrEventTable(tb.IsDescription):
     """Store for a Kripton event."""
