@@ -16,13 +16,13 @@ def conditional_labels(with_title=True):
     without_ = lambda *args: labels(*args[:2], "")
     return with_ if with_title else without_
 
-def gauss_seed(x, y):
+def gauss_seed(x, y, sigma_rel=0.05):
     """
     Estimate the seed for a gaussian fit to the input data.
     """
     y_max  = np.argmax(y) # highest bin
     x_max  = x[y_max]
-    sigma  = 0.05 * x_max
+    sigma  = sigma_rel * x_max
     amp    = y_max * (2 * np.pi)**0.5 * sigma * np.diff(x)[0]
     seed   = amp, x_max, sigma
     return seed
