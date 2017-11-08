@@ -4,7 +4,13 @@ import invisible_cities.core .fit_functions  as     fitf
 from   invisible_cities.core .core_functions import in_range
 from   invisible_cities.evm  .ic_containers  import Measurement
 from   invisible_cities.icaro.hst_functions  import shift_to_bin_centers
+from   invisible_cities.icaro.hst_functions  import labels
 
+
+def conditional_labels(with_title=True):
+    with_    = lambda *args: labels(*args)
+    without_ = lambda *args: labels(*args[:2], "")
+    return with_ if with_title else without_
 
 def gauss_seed(x, y):
     y_max  = np.argmax(y) # highest bin
